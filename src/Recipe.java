@@ -32,6 +32,7 @@ public class Recipe {
 		try (LineNumberReader reader = new LineNumberReader(
 				new InputStreamReader(new FileInputStream(new File(name)), Charset.forName(CHARSET)));) {
 			for (String line; (line = reader.readLine()) != null;) {
+				// 行番号をIDとして利用し、出力する(ID仕様を公開するかわからないのでREADME.txtには記載しない)
 				System.out.println(reader.getLineNumber() + ":" + line);
 			}
 		} catch (IOException e) {
