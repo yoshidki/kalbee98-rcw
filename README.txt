@@ -13,9 +13,12 @@
 1. src フォルダに移動
 
 2. 次のコマンドでプログラムをビルド
-> javac Recipe.java 
+> javac -encoding utf-8 Recipe.java 
 
 3. 実行
-> java Recipe
+> java Recipe {レシピファイル}
+
+■レシピファイルフォーマット
+文字コード: UTF-8
 
 以上
