@@ -1,5 +1,5 @@
 public class Recipe {
 	public static void main(String... args){
-		System.out.println("ƒIƒ€ƒ‰ƒCƒX");
+		System.out.println("ã‚ªãƒ ãƒ©ã‚¤ã‚¹");
 	}
 }
