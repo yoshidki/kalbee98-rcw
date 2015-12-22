@@ -1,24 +1,30 @@
-���v���W�F�N�g����
-���V�s�Ǘ��v���O����
+■プロジェクト説明
+レシピ管理プログラム
 
 
-���v���W�F�N�g�\��
+■プロジェクト構成
 
 (root)
-�� README.txt - �{��
-�� src - �R�[�h�i�[�t�H���_
+├ README.txt - 本書
+└ src - コード格納フォルダ
 
-�����s���@
+■実行方法
 
-1. src �t�H���_�Ɉړ�
+1. src フォルダに移動
 
-2. ���̃R�}���h�Ńv���O�������r���h
+2. 次のコマンドでプログラムをビルド
 > javac -encoding utf-8 Recipe.java 
 
-3. ���s
-> java Recipe {���V�s�t�@�C��}
+3. 実行
+> java Recipe {レシピファイル}
 
-�����V�s�t�@�C���t�H�[�}�b�g
-�����R�[�h: UTF-8
+■レシピファイルフォーマット
+文字コード: UTF-8
+レシピタイトル:一行に一つずつ
 
-�ȏ�
+<例>recipe-data.txt
+オムライス
+親子丼
+杏仁豆腐
+
+以上
