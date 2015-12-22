@@ -10,9 +10,9 @@ import java.nio.charset.Charset;
  */
 public class Recipe {
 
-	public static void main(String... args){
-		//パラメータチェック
-		if(args == null || args.length == 0){
+	public static void main(String... args) {
+		// パラメータチェック
+		if (args == null || args.length == 0) {
 			return;
 		}
 
@@ -21,27 +21,21 @@ public class Recipe {
 
 	/**
 	 * ファイル内容を出力
-	 * @param name レシピファイル名
+	 * 
+	 * @param name
+	 *            レシピファイル名
 	 */
-	public void readFile(String name){
+	public void readFile(String name) {
 		File recipe = new File(name);
 
-		//TODO: try-with-resources 構文利用すべき
-		BufferedReader reader = null;
-		try {
-			reader = new BufferedReader(new InputStreamReader(new FileInputStream(recipe), Charset.forName("UTF-8")));
-
-			//XXX: 1行しか読み込めない。。。
+		try (BufferedReader reader = new BufferedReader(
+				new InputStreamReader(new FileInputStream(recipe), Charset.forName("UTF-8")));) {
+			// XXX: 1行しか読み込めない。。。
 			System.out.println(reader.readLine());
 		} catch (IOException e) {
-			// ファイルがない場合は無視する
-		} finally{
-			try {
-				if(reader != null){
-					reader.close();
-				}
-			} catch (IOException e) {
-				// 読み込めなくても無視
+			e.printStackTrace();
+			for (Throwable t : e.getSuppressed()) {
+				t.printStackTrace();
 			}
 		}
 	}
