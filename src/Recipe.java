@@ -25,9 +25,13 @@ public class Recipe {
 	 */
 	public void readFile(String name){
 		File recipe = new File(name);
+
+		//TODO: try-with-resources 構文利用すべき
 		BufferedReader reader = null;
 		try {
 			reader = new BufferedReader(new InputStreamReader(new FileInputStream(recipe), Charset.forName("UTF-8")));
+
+			//XXX: 1行しか読み込めない。。。
 			System.out.println(reader.readLine());
 		} catch (IOException e) {
 			// ファイルがない場合は無視する
